@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="gift_card_notification" translate="label" type="text" sortOrder="100" showInDefault="1">
+            <class>separator-top</class>
+            <label>e-Gift Card Notification</label>
+            <tab>coyuchi</tab>
+            <resource>Coyuchi_GiftCardNotification::config</resource>
+            <group id="general" translate="label comment" type="text" sortOrder="1" showInDefault="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable e-gift card notification</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email" translate="label comment" type="text" showInDefault="1" sortOrder="20">
+                    <label>Notify Email Address</label>
+                    <comment>Comma separated emails that receive e-Gift card notification</comment>
+                </field>
+                <field id="gift_card_sku_csv" translate="label comment" type="file" sortOrder="30" showInDefault="1">
+                    <label>e-Gift Card SKU CSV</label>
+                    <comment>One sku in one line</comment>
+                    <backend_model>Coyuchi\GiftCardNotification\Model\Config\Backend\Csv</backend_model>
+                    <upload_dir config="system/filesystem/var" scope_info="0">gift_card_notification/config</upload_dir>
+                    <base_url type="var" scope_info="0">gift_card_notification/config</base_url>
+                </field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="40" showInDefault="1">
+                    <label>Email template</label>
+                    <comment>Choose Email template</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="email_from" translate="label comment" type="select" sortOrder="50" showInDefault="1">
+                    <label>Email From</label>
+                    <comment>Choose Email from</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

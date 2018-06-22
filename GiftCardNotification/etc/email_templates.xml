@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+    <template
+        id="gift_card_notification_general_email_template"
+        label="e-Gift Card Notification"
+        file="default.html"
+        type="text"
+        module="Coyuchi_GiftCardNotification"
+        area="frontend"
+    />
+</config>

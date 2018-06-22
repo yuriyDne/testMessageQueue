@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:MessageQueue/etc/queue.xsd">
+    <broker topic="async.coyuchi.giftCardNotification.orderCreated" type="amqp" exchange="magento">
+        <queue
+            name="async.coyuchi.giftCardNotification.orderCreated"
+            consumer="coyuchiGiftCardNotificationConsumer"
+            handler="Coyuchi\GiftCardNotification\Consumer\Async\OrderCreatedConsumer::processMessage"
+        />
+    </broker>
+</config>
